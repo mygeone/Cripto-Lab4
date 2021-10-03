@@ -31,7 +31,7 @@ argsValues = parser.parse_args()
 if(argsValues.password):
     hashPassword(argsValues.password,argsValues.verbose)
 elif(argsValues.password_file):
-    hashTxt(argsValues.password_file, argsValues.verbose)
+    hashTxt(argsValues.password_file,argsValues.verbose)
 elif(argsValues.stdin_text):
     print("cc")
 

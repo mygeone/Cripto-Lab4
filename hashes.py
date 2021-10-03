@@ -2,7 +2,7 @@ import sys, time, uuid, hashlib
 
 def hashPassword(password, verbose):
     #hasheamos la pw
-    hashed_pw = hashlib.sha512(password.encode())
+    hashed_pw = hashlib.blake2b(password.encode())
     #generamos una seed
     pre_seed = uuid.uuid4().hex
     #hasheamos la pw agregando la seed al principio 
@@ -16,7 +16,6 @@ def hashPassword(password, verbose):
         print("------------------------------------------------------------")
     else:
         print("El hash calculado es : " + unshatedToStore.hexdigest() )
-
 
 
 def hashTxt(file, verbose):
