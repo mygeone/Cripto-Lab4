@@ -1,10 +1,7 @@
-FROM gcc:latest
+FROM python:3
+ADD . /app
 
-COPY main.cpp /usr/src/cpp_test
+WORKDIR /app
 
-WORKDIR /usr/src/cpp_test
-
-RUN g++ -o Test main.cpp
-
-CMD ["./Test"]
+ENTRYPOINT [ "python", "main.py" ]
 

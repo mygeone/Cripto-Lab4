@@ -1,12 +1,9 @@
 import argparse
-from hashes import hashPassord
+from hashes import hashPassword, hashTxt
 
 parser = argparse.ArgumentParser(description='Little program to process hashing password for Cripto')
-subparsers = parser.add_subparsers(help='sub-commands help')
-
 
 group = parser.add_mutually_exclusive_group()
-
 
 #format(results.password)
 group.add_argument('-p', action='store',
@@ -23,7 +20,7 @@ group.add_argument('-s', action='store',
                     dest='stdin_text',
                     help='Proceess a stdin text to hash')
 
-parser.add_argument('-v', action='store',
+parser.add_argument('-v', action='store_true',
                     dest='verbose',
                     help='Verbose mode')
 
@@ -31,7 +28,11 @@ parser.add_argument('-v', action='store',
 argsValues = parser.parse_args()
 
 
-print(argsValues)
-
+if(argsValues.password):
+    hashPassword(argsValues.password,argsValues.verbose)
+elif(argsValues.password_file):
+    hashTxt(argsValues.password_file, argsValues.verbose)
+elif(argsValues.stdin_text):
+    print("cc")
 
 
