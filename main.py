@@ -1,17 +1,37 @@
+import argparse
+from hashes import hashPassord
 
-import hashlib
-import uuid
-import time
-
-
-password = 'holaa'
-
-#len 128
-hashed_pw = hashlib.sha512(password.encode())
-
-#len32
-pre_seed = uuid.uuid4().hex
+parser = argparse.ArgumentParser(description='Little program to process hashing password for Cripto')
+subparsers = parser.add_subparsers(help='sub-commands help')
 
 
-unshatedToStore = hashlib.sha512(pre_seed.encode() + hashed_pw.hexdigest().encode())
-print(unshatedToStore.hexdigest() )
+group = parser.add_mutually_exclusive_group()
+
+
+#format(results.password)
+group.add_argument('-p', action='store',
+                    dest='password',
+                    help='Proceess a password to hash')
+
+#format(results.password_file)
+group.add_argument('-f', action='store',
+                    dest='password_file',
+                    help='Proceess a list of passwords to hash in a .txt file')
+
+#format(results.stdin_text)
+group.add_argument('-s', action='store',
+                    dest='stdin_text',
+                    help='Proceess a stdin text to hash')
+
+parser.add_argument('-v', action='store',
+                    dest='verbose',
+                    help='Verbose mode')
+
+
+argsValues = parser.parse_args()
+
+
+print(argsValues)
+
+
+
