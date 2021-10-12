@@ -1,7 +1,9 @@
 import argparse
 from hashes import hashPassword, hashTxt
 from entropy import entropy
+import time
 
+start_time = time.time()
 parser = argparse.ArgumentParser(description='Little program to process hashing password for Cripto')
 
 group = parser.add_mutually_exclusive_group()
@@ -40,4 +42,6 @@ elif(argsValues.password_file):
 elif(argsValues.entropy):
     entropy(argsValues.entropy,argsValues.verbose)
 
+passed_time = time.time() - start_time
 
+print(passed_time)

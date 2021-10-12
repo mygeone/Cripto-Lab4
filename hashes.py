@@ -3,8 +3,17 @@ import sys, time, uuid, hashlib
 def hashPassword(password, verbose):
     #hasheamos la pw
     hashed_pw = hashlib.blake2b(password.encode())
+
     #generamos una seed
     pre_seed = uuid.uuid4().hex
+
+    #invert array
+    left = password[:len(password)//2]
+    right =  password[:len(password)//2:]
+
+    unshatedToStore2 = left.encode() + pre_seed.encode() + right.encode()
+    #pw2 = hashlib.blake2b(unshatedToStore2.encode())
+
     #hasheamos la pw agregando la seed al principio 
     unshatedToStore = hashlib.sha512(pre_seed.encode() + hashed_pw.hexdigest().encode())
 
