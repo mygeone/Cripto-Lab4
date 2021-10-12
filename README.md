@@ -6,10 +6,10 @@ A simple INSECURE Python script to hash passwords.
 :no_entry: You must NOT use this algorithm to hash your passwords since it's totally insecure and untested :no_entry:
 
 Supports:
-* String password
-* File with several passwords
-* STDIN text
-* Entropy calculator
+* :small_orange_diamond: String password
+* :small_orange_diamond: File with several passwords
+* :small_orange_diamond: STDIN text
+* :small_orange_diamond: Entropy calculator
 
 ```
 usage: main.py [-h] [-p PASSWORD | -f PASSWORD_FILE | -s STDIN_TEXT] [-v]
