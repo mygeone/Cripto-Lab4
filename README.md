@@ -44,3 +44,9 @@ Example
 docker run criptolab4 -f passwords.txt -v
 ```
 # Perfomance Comparative :chart_with_upwards_trend:
+| N tests | Time to process |
+| ------------- | ------------- |
+| 1 passwords |  time1  |
+| 10 passwords | time2 |  
+| 20 passwords | time3  |
+| 50 passwords | time4  |
