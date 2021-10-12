@@ -1,6 +1,7 @@
 import sys, time, uuid, hashlib
 
 def hashPassword(password, verbose):
+    start_time = time.time()
     #hasheamos la pw
     hashed_pw = hashlib.blake2b(password.encode())
 
@@ -17,12 +18,17 @@ def hashPassword(password, verbose):
     #hasheamos la pw agregando la seed al principio 
     unshatedToStore = hashlib.sha512(pre_seed.encode() + hashed_pw.hexdigest().encode())
 
+    passed_time = time.time() - start_time
+
+
     if(verbose):
         print("La contraseña hasheada con SHA512 es : " +hashed_pw.hexdigest())
         print("La seed calculada es : " +pre_seed)
         print("El string a hashear es: "+pre_seed+hashed_pw.hexdigest())
         print("El string hasheado con 512 a almacenar es : " +unshatedToStore.hexdigest())
+        print(passed_time)
         print("------------------------------------------------------------")
+
     else:
         print("El hash calculado es : " + unshatedToStore.hexdigest() )
 
