@@ -43,4 +43,4 @@ Example
 ```
 docker run criptolab4 -f passwords.txt -v
 ```
-# Perfomance Comparative 
+# Perfomance Comparative :chart_with_upwards_trend:
