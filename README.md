@@ -1,9 +1,9 @@
 # Criptografía y Seguridad
-# Laboratorio 4: Hash
+# Laboratorio 4: Hash :lock:
 
 A simple INSECURE Python script to hash passwords.
 
-:bangbang: You must NOT use this algorithm to hash your passwords since it's totally insecure and untested. 
+:no_entry: You must NOT use this algorithm to hash your passwords since it's totally insecure and untested :no_entry:
 
 Supports:
 * String password
