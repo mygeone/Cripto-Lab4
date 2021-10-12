@@ -46,7 +46,7 @@ docker run criptolab4 -f passwords.txt -v
 # Perfomance Comparative :chart_with_upwards_trend:
 | N tests | Time to process |
 | ------------- | ------------- |
-| 1 passwords |  time1  |
-| 10 passwords | time2 |  
-| 20 passwords | time3  |
-| 50 passwords | time4  |
+| 1 passwords |  0.0125945 seconds  |
+| 10 passwords | 0.0222277 seconds |  
+| 20 passwords | 0.0312312 seconds  |
+| 50 passwords | 0.0620050 seconds  |
