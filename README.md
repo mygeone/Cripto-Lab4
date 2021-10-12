@@ -43,3 +43,4 @@ Example
 ```
 docker run criptolab4 -f passwords.txt -v
 ```
+# Perfomance Comparative 
