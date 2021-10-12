@@ -20,7 +20,6 @@ optional arguments:
   -h, --help        show this help message and exit
   -p PASSWORD       Proceess a password to hash
   -f PASSWORD_FILE  Proceess a list of passwords to hash in a .txt file
-  -s STDIN_TEXT     Proceess a stdin text to hash
   -e PASSWORD       Calculate a estimated entropy for a given password
   -v                Verbose mode
 
