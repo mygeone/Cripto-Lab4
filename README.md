@@ -9,6 +9,7 @@ Supports:
 * String password
 * File with several passwords
 * STDIN text
+* Entropy calculator
 
 ```
 usage: main.py [-h] [-p PASSWORD | -f PASSWORD_FILE | -s STDIN_TEXT] [-v]
@@ -20,6 +21,7 @@ optional arguments:
   -p PASSWORD       Proceess a password to hash
   -f PASSWORD_FILE  Proceess a list of passwords to hash in a .txt file
   -s STDIN_TEXT     Proceess a stdin text to hash
+  -e PASSWORD       Calculate a estimated entropy for a given password
   -v                Verbose mode
 
 Examples:
@@ -35,7 +37,7 @@ docker build . -t criptolab4
 ```
 Run criptolab4 container generated:
 ```
-docker run criptolab4 [-p PASSWORD | -f PASSWORD_FILE | -s STDIN_TEXT] [-v]
+docker run criptolab4 [-p PASSWORD | -f PASSWORD_FILE | -s STDIN_TEXT | -e PASSWORD] [-v]
 ```
 Example
 ```
