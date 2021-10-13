@@ -47,9 +47,15 @@ Example
 docker run criptolab4 -f passwords.txt -v
 ```
 # Perfomance Comparative :chart_with_upwards_trend:
-| N tests | Time to process |
-| ------------- | ------------- |
-| 1 passwords |  0.0125945 seconds  |
-| 10 passwords | 0.0222277 seconds |  
-| 20 passwords | 0.0312312 seconds  |
-| 50 passwords | 0.0620050 seconds  |
+## Time to hash
+It performs several tests to hash 1, 10, 20, 50 and 100 passwords with differents hashing algorithms to test their time performance.
+Random strings with 30 characters were used as passwords. For example, ``` M.ygU>M4OaqB)oFS2ysu6mX,=/W6n)Fe``` 
+| N tests | Own algorithm  | SHA-1 | SHA-256 | MD5
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 1 passwords  | 1.835823059312e-05 seconds |   1.43051109375e-06 seconds | 1.192092895505e-06 seconds | 1.43051147460e-06 seconds |
+| 10 passwords | 0.0001015663126562 seconds | 3.814697225e-06 seconds | 3.576278686525e-06 seconds | 3.337860107475e-06 seconds |
+| 20 passwords | 0.000704526451172 seconds | 9.7751643164062e-06 seconds | 1.192092895125e-05 seconds | 9.775161764062e-06 seconds | 
+| 50 passwords | 0.000645637570312 seconds  | 3.004966796875e-05 seconds | 2.7179718017125e-05 seconds | 2.6941298476562e-05 seconds |
+| 100 paswords | 0.001564502714531 seconds  | 5.006790168125e-05 seconds | 4.55379486044e-05 seconds | 4.553794869844e-05 seconds |
+
+## Time to hash
