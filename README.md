@@ -1,4 +1,4 @@
-# Criptografía y Seguridad
+print("----------------------------------------------")# Criptografía y Seguridad
 # Laboratorio 4: Hash :lock:
 
 A simple INSECURE Python script to hash passwords.
@@ -50,7 +50,7 @@ docker run criptolab4 -f passwords.txt -v
 ## Time to hash
 It performs several tests to hash 1, 10, 20, 50 and 100 passwords with differents hashing algorithms to test their time performance.
 Random strings with 30 characters were used as passwords. For example, ``` M.ygU>M4OaqB)oFS2ysu6mX,=/W6n)Fe``` 
-| N tests | Own algorithm  | SHA-1 | SHA-256 | MD5
+| N tests | Own algorithm  | SHA-1 | SHA-256 | MD5 |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 1 passwords  | 1.835823059312e-05 seconds |   1.43051109375e-06 seconds | 1.192092895505e-06 seconds | 1.43051147460e-06 seconds |
 | 10 passwords | 0.0001015663126562 seconds | 3.814697225e-06 seconds | 3.576278686525e-06 seconds | 3.337860107475e-06 seconds |
@@ -58,4 +58,11 @@ Random strings with 30 characters were used as passwords. For example, ``` M.ygU
 | 50 passwords | 0.000645637570312 seconds  | 3.004966796875e-05 seconds | 2.7179718017125e-05 seconds | 2.6941298476562e-05 seconds |
 | 100 paswords | 0.001564502714531 seconds  | 5.006790168125e-05 seconds | 4.55379486044e-05 seconds | 4.553794869844e-05 seconds |
 
-## Time to hash
+## Entropy
+With the same password before, it performs test to calculate a numeric value for entropy given a hashed string by differents hashing algorithms.
+
+| Own algorithm  | SHA-1 | SHA-256 | MD5 |
+| ------------- | ------------- | ------------- | ------------- |
+| 661.750400184616 bits | 206.79 bits | 330.87 bits | 165.43 bits |
+
+
