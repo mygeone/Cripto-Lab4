@@ -10,6 +10,11 @@ Supports:
 * :small_orange_diamond: File with several passwords
 * :small_orange_diamond: Entropy calculator
 
+Features:
+* ✔️ Produces as output a 1024-bit hash
+* ✔️ Each hash lasts 5 minutes
+* ✔️ It use operations to input password
+* 
 ```
 usage: main.py [-h] [-p PASSWORD | -f PASSWORD_FILE | -s STDIN_TEXT] [-v]
 
