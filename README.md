@@ -8,7 +8,6 @@ A simple INSECURE Python script to hash passwords.
 Supports:
 * :small_orange_diamond: String password
 * :small_orange_diamond: File with several passwords
-* :small_orange_diamond: STDIN text
 * :small_orange_diamond: Entropy calculator
 
 ```
