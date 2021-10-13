@@ -1,4 +1,5 @@
-print("----------------------------------------------")# Criptografía y Seguridad
+# Criptografía y Seguridad
+# Criptografía y Seguridad
 # Laboratorio 4: Hash :lock:
 
 A simple INSECURE Python script to hash passwords.
