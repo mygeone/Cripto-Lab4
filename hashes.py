@@ -1,43 +1,51 @@
-import sys, time, uuid, hashlib
+import sys, time, hashlib
+
+
+def intercalate(larger, shorter):
+    for i in range((len(larger)-len(shorter))):
+        shorter+=('0')
+    
+    return ''.join([str(elem) for elem in [*sum(zip(larger,shorter),())]])
 
 def hashPassword(password, verbose):
-    start_time = time.time()
-    #hasheamos la pw
-    hashed_pw = hashlib.blake2b(password.encode())
-
     #generamos una seed
-    pre_seed = uuid.uuid4().hex
+    pre_seed =  str(int(time.time())//5*60)
 
-    #invert array
-    left = password[:len(password)//2]
-    right =  password[:len(password)//2:]
+    starTimeSingle = time.time()
+    
+    """ 
+    hasheamos un str generado a partir de intercalar la password y un string basado en una seed con padding
+    Ejemplo:
+    password  = HolaSoyUnaPassword
+    seed      = 128312983
+    strToHash = H1o2l8a3S1o2y9U8n3a0P0a0s0s0w0o0r0d0
+    """
 
-    unshatedToStore2 = left.encode() + pre_seed.encode() + right.encode()
-    #pw2 = hashlib.blake2b(unshatedToStore2.encode())
-
-    #hasheamos la pw agregando la seed al principio 
-    unshatedToStore = hashlib.sha512(pre_seed.encode() + hashed_pw.hexdigest().encode())
-
-    passed_time = time.time() - start_time
+    if (len(pre_seed)>len(password)):
+        strToHash = intercalate(pre_seed,password).encode()
+        hashedPassword = hashlib.sha512(strToHash)
+    else:
+        strToHash = intercalate(password,pre_seed).encode()
+        hashedPassword = hashlib.sha512(strToHash)
 
 
     if(verbose):
-        print("La contraseña hasheada con SHA512 es : " +hashed_pw.hexdigest())
-        print("La seed calculada es : " +pre_seed)
-        print("El string a hashear es: "+pre_seed+hashed_pw.hexdigest())
-        print("El string hasheado con 512 a almacenar es : " +unshatedToStore.hexdigest())
-        print(passed_time)
-        print("------------------------------------------------------------")
+        print("La contraseña a hashear es    :",password)
+        print("La seed calculada es          :",pre_seed)
+        print("El string a hashear es        :",strToHash)
+        print("La password hasheada es       :",hashedPassword.hexdigest())
+        print("El tiempo de procesado fue de :", time.time()-starTimeSingle,"segundos ")
 
     else:
-        print("El hash calculado es : " + unshatedToStore.hexdigest() )
+        print("El hash calculado es : " + hashedPassword.hexdigest() )
 
 
 def hashTxt(file, verbose):
+    startTimeFiles = time.time()
     with open(file) as f:
         lines = f.readlines()
         for password in lines:
             hashPassword(password, verbose)
+    print("---------------------------------------------------------------------------")
+    print("El tiempo de ejecuccion total fue",time.time() - startTimeFiles,"segundos")
 
-def hashSTD(std,verbose):
-    hashPassword(std,verbose)
