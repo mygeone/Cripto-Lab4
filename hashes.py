@@ -7,7 +7,7 @@ def intercalate(larger, shorter):
     
     return ''.join([str(elem) for elem in [*sum(zip(larger,shorter),())]])
 
-def hashPassword(password, verbose):
+def hashPassword(password, verbose, flag):
     #generamos una seed
     pre_seed =  str(int(time.time())//5*60)
 
@@ -28,16 +28,20 @@ def hashPassword(password, verbose):
         strToHash = intercalate(password,pre_seed).encode()
         hashedPassword = hashlib.sha512(strToHash)
 
-
-    if(verbose):
-        print("La contraseña a hashear es    :",password)
-        print("La seed calculada es          :",pre_seed)
-        print("El string a hashear es        :",strToHash)
-        print("La password hasheada es       :",hashedPassword.hexdigest())
-        print("El tiempo de procesado fue de :", time.time()-starTimeSingle,"segundos ")
-
+    if (flag == 'q'):
+        return -1
     else:
-        print("El hash calculado es : " + hashedPassword.hexdigest() )
+        if(verbose):
+            print("La contraseña a hashear es    :",password)
+            print("La seed calculada es          :",pre_seed)
+            print("El string a hashear es        :",strToHash)
+            print("La password hasheada es       :",hashedPassword.hexdigest())
+            print("El tiempo de procesado fue de :", time.time()-starTimeSingle,"segundos ")
+        
+        else:
+            print("El hash calculado es : " + hashedPassword.hexdigest() )
+        
+    
 
 
 def hashTxt(file, verbose):
@@ -45,7 +49,7 @@ def hashTxt(file, verbose):
     with open(file) as f:
         lines = f.readlines()
         for password in lines:
-            hashPassword(password, verbose)
+            hashPassword(password, verbose, 'f')
     print("---------------------------------------------------------------------------")
-    print("El tiempo de ejecuccion total fue",time.time() - startTimeFiles,"segundos")
+    print("El tiempo de ejecucion total fue",time.time() - startTimeFiles,"segundos")
 

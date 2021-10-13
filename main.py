@@ -35,7 +35,7 @@ argsValues = parser.parse_args()
 
 
 if(argsValues.password):
-    hashPassword(argsValues.password,argsValues.verbose)
+    hashPassword(argsValues.password,argsValues.verbose,'f')
 elif(argsValues.password_file):
     hashTxt(argsValues.password_file,argsValues.verbose)
 elif(argsValues.entropy):
