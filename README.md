@@ -1,4 +1,4 @@
-# Criptografía y Seguridad
+
 # Criptografía y Seguridad
 # Laboratorio 4: Hash :lock:
 
