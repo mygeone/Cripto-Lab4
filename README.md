@@ -8,9 +8,13 @@ A simple INSECURE Python script to hash passwords.
 Supports:
 * :small_orange_diamond: String password
 * :small_orange_diamond: File with several passwords
-* :small_orange_diamond: STDIN text
 * :small_orange_diamond: Entropy calculator
 
+Features:
+* ✔️ Produces as output a 1024-bit hash
+* ✔️ Each hash lasts 5 minutes
+* ✔️ It use operations to input password
+* 
 ```
 usage: main.py [-h] [-p PASSWORD | -f PASSWORD_FILE | -s STDIN_TEXT] [-v]
 
@@ -20,7 +24,6 @@ optional arguments:
   -h, --help        show this help message and exit
   -p PASSWORD       Proceess a password to hash
   -f PASSWORD_FILE  Proceess a list of passwords to hash in a .txt file
-  -s STDIN_TEXT     Proceess a stdin text to hash
   -e PASSWORD       Calculate a estimated entropy for a given password
   -v                Verbose mode
 
