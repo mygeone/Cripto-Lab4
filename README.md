@@ -64,6 +64,6 @@ With the same password before, it performs test to calculate a numeric value for
 
 | Own algorithm  | SHA-1 | SHA-256 | MD5 |
 | ------------- | ------------- | ------------- | ------------- |
-| 661.750400184616 bits | 206.79 bits | 330.87 bits | 165.43 bits |
+| 661.750400184616 bits | 160 bits | 256 bits | 128 bits |
 
 
